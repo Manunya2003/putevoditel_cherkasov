@@ -1,0 +1,288 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f9;
+}
+h1 {
+    text-align: center;
+    color: #2c3e50;
+}
+#map {
+    height: 600px;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    border: 2px solid #34495e;
+}
+
+/* Стили для всплывающего окна (балуна) */
+.custom-popup .popup-title {
+    font-weight: bold;
+    font-size: 18px;
+    color: #1a5276;
+    margin-bottom: 5px;
+}
+.custom-popup .popup-desc {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+.custom-popup .detail-btn {
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    padding: 6px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.custom-popup .detail-btn:hover {
+    background-color: #1a5276;
+}
+/* Блок с биографией под картой */
+#bio {
+    max-width: 80%;           /* ширина блока, как у карты */
+    margin: 30px auto;        /* центрируем и добавляем отступ сверху/снизу */
+    padding: 20px 30px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7;
+    color: #2c3e50;
+}
+
+#bio h2 {
+    color: #1a5276;
+    text-align: center;
+    font-size: 28px;
+    margin-top: 0;
+}
+
+#bio h3 {
+    color: #2980b9;
+    margin-top: 25px;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 5px;
+}
+
+#bio p {
+    margin: 10px 0;
+}
+
+#bio em {
+    color: #7f8c8d;
+    font-size: 14px;
+}
+/* ===== Общий контейнер для всего контента ===== */
+.container {
+    max-width: 1200px;           /* ограничиваем ширину */
+    margin: 0 auto;             /* центрируем по горизонтали */
+    padding: 20px;              /* отступы внутри контейнера */
+    background-color: #ffffff;  /* белый фон для контента (можно сменить) */
+    border-radius: 20px;        /* скруглённые углы */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1); /* лёгкая тень */
+}
+
+/* ===== Фон всей страницы ===== */
+body {
+    background-color: #e8f0e6;  /* цвет фона вокруг контейнера */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 9999; 
+    left: 0; top: 0; 
+    width: 100%; height: 100%; 
+    background-color: rgba(0,0,0,0.7);
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; 
+    padding: 20px;
+    border-radius: 15px;
+    width: 60%; 
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.close-btn:hover { 
+    color: black; 
+}
+/* ===== Список городов под картой ===== */
+#city-list-container {
+    max-width: 80%;
+    margin: 20px auto;
+    padding: 15px 20px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+#city-list-container h3 {
+    margin-top: 0;
+    color: #2d4a3e;
+    text-align: center;
+}
+
+#city-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 0;
+}
+
+.city-item {
+    background: #e8f0e6;
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 16px;
+    color: #2d4a3e;
+    border: 2px solid transparent;
+}
+
+.city-item:hover {
+    background: #c5d9c0;
+    border-color: #2d4a3e;
+    transform: scale(1.05);
+}
+
+.city-item:active {
+    transform: scale(0.95);
+}
+#modalImage {
+    max-width: 100%;
+    max-height: 400px;   /* ограничиваем высоту, чтобы не занимало весь экран */
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    margin: 15px 0;
+    display: block;      /* чтобы центрировать */
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: contain; /* чтобы картинка вписывалась без обрезки */
+}
+.bio-img {
+    float: left;           /* прижимаем картинку к левому краю */
+    margin: 0 20px 15px 0; /* отступы: сверху 0, справа 20, снизу 15, слева 0 */
+    width: 250px;          /* задайте нужную ширину */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+#modalImage {
+    display: block;          /* делаем блочным, чтобы работало центрирование */
+    margin: 15px auto;       /* центрирование по горизонтали + отступы сверху/снизу */
+    max-width: 100%;         /* чтобы не вылезало за границы окна */
+    border-radius: 10px;     /* скругление (если нужно) */
+}
+/* ===== АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНОВ И ПЛАНШЕТОВ ===== */
+
+/* Для экранов шириной до 768px (планшеты и телефоны) */
+@media (max-width: 768px) {
+    /* Общие отступы */
+    body {
+        padding: 10px;
+    }
+    h1 {
+        font-size: 22px;
+    }
+    #map {
+        height: 350px;          /* уменьшаем карту */
+        width: 100%;
+        border-radius: 10px;
+    }
+    #city-list-container {
+        width: 95%;
+        padding: 10px;
+    }
+    .city-item {
+        padding: 10px 16px;     /* увеличиваем кнопки для пальцев */
+        font-size: 18px;
+        margin: 4px;
+    }
+    /* Блок биографии */
+    #bio {
+        width: 95%;
+        padding: 15px;
+        font-size: 16px;
+    }
+    .bio-row {
+        flex-direction: column; /* картинка и текст вертикально */
+        align-items: center;
+    }
+    .bio-img {
+        width: 100%;            /* картинка на всю ширину */
+        max-width: 300px;
+        margin: 0 auto 15px;
+        float: none;            /* отключаем обтекание */
+    }
+    /* Модальное окно */
+    .modal-content {
+        width: 90%;             /* почти на весь экран */
+        margin: 10% auto;
+        padding: 15px;
+        max-height: 80vh;
+    }
+    #modalImage {
+        max-height: 200px;      /* ограничиваем высоту фото */
+        margin: 10px auto;
+    }
+    .close-btn {
+        font-size: 32px;        /* крестик побольше */
+    }
+    /* Кнопка "Подробнее" в балуне */
+    .detail-btn {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+    /* Музыкальный плеер */
+    .music-player {
+        width: auto;
+        max-width: 200px;
+        bottom: 10px;
+        right: 10px;
+        padding: 6px 12px;
+    }
+    .music-player audio {
+        width: 120px;
+    }
+}
+
+/* Для очень маленьких экранов (телефоны до 480px) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 18px;
+    }
+    #map {
+        height: 280px;
+    }
+    #bio {
+        font-size: 14px;
+        padding: 10px;
+    }
+    .modal-content {
+        width: 95%;
+        padding: 10px;
+        margin: 5% auto;
+    }
+    .city-item {
+        padding: 8px 14px;
+        font-size: 16px;
+    }
+}
