@@ -135,13 +135,16 @@ const citiesData = [
 // 2. СОЗДАНИЕ КАРТЫ
 // =============================================
 // Создаем карту и устанавливаем центр по средним координатам России
-var map = L.map('map', {attributionControl: false
+var map = L.map('map', {
+    attributionControl: false
 }).setView([55.76, 37.64], 4);
+
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 18,
+    maxZoom: 18
 }).addTo(map);
+
 L.control.attribution({
-    prefix: false   // убираем 'Leaflet'
+    prefix: false
 }).addTo(map);
 
 citiesData.forEach(function(city) {
